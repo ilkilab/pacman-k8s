@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gitlab-runner
+  name: gitlab-runner
+  namespace: gitlab-runner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitlab-runner
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gitlab-runner
+    spec:
+      serviceAccountName: gitlab-runner 
+      containers:
+      - image: rg.fr-par.scw.cloud/ilkilabs/gitlab-runner:v1
+        name: gitlab-runner
+        resources: {}
+status: {}
