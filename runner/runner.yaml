@@ -23,4 +23,5 @@ spec:
       - image: rg.fr-par.scw.cloud/ilkilabs/gitlab-runner:v1
         name: gitlab-runner
         resources: {}
+        imagePullPolicy: Always
 status: {}
