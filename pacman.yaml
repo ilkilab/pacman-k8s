@@ -1,3 +1,12 @@
+#namespace to store resources
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: pacman
+spec: {}
+status: {}
+---
 #database_secret
 apiVersion: v1
 kind: Secret
@@ -32,6 +41,7 @@ metadata:
   labels:
     name: mongo
   name: mongo
+  namespace: pacman
 spec:
   replicas: 1
   selector:
@@ -114,6 +124,7 @@ metadata:
   labels:
     name: pacman
   name: pacman
+  namespace: pacman
 spec:
   replicas: 1
   selector:
